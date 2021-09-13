@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="dimmer container">
+  <div class="hidden dimmer container">
     <div class="modal">
       <h1>Add Entry</h1>
       <form>
-        <div class="row flex-start">
+        <div class="row justify-flex-start">
           <select>
+            <option value="">Day of Week</option>
             <option value="sun">Sunday</option>
             <option value="mon">Monday</option>
             <option value="tues">Tuesday</option>
@@ -22,6 +23,7 @@
             <option value="sat">Saturday</option>
           </select>
           <select class="option-margin">
+            <option value="">Time</option>
             <option value="12am">12:00 AM</option>
             <option value="1am">1:00 AM</option>
             <option value="2am">2:00 AM</option>
@@ -49,14 +51,24 @@
           </select>
         </div>
         <div class="row">
-          <textarea class="description"></textarea>
+          <textarea class="description" placeholder="Description"></textarea>
+        </div>
+        <div class="row justify-flex-end">
+          <button id="submit">Submit</button>
         </div>
       </form>
     </div>
   </div>
   <h1>Weekly Planner</h1>
   <div class="row">
-    <button>Add Entry</button>
+    <div class="column_seventh">
+      <div class="boxDayOfWeek">
+        <h2>Sunday</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button id="addEntry">Add Entry</button>
   </div>
 
   <script src="main.js"></script>

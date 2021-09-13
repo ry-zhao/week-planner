@@ -1,15 +1,9 @@
-h1 {
-  text-align: center;
+body {
+  font-family: sans-serif;
 }
 
-button {
-  margin: auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  width: 12rem;
-  border: none;
-  background-color: lightgray;
-  box-shadow: 4px 2px 2px black;
+  h1 {
+  text-align: center;
 }
 
 button:hover {
@@ -35,7 +29,7 @@ button:hover {
 }
 
 .dimmer {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -50,7 +44,10 @@ button:hover {
   text-align: center;
   z-index: 2;
   background-color: white;
-  padding: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 4em;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .hidden {
@@ -61,8 +58,12 @@ button:hover {
   justify-content: center;
 }
 
-.flex-start {
+.justify-flex-start {
   justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
 }
 
 .description {
@@ -73,4 +74,20 @@ button:hover {
 
 .option-margin {
   margin-left: 1rem;
+}
+
+#addEntry {
+  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 12rem;
+  border: none;
+  background-color: lightgray;
+  box-shadow: 4px 2px 2px black;
+}
+
+#submit {
+  margin-top: 1.5rem;
+  background-color: white;
+  border: 2px solid black;
 }
