@@ -97,8 +97,16 @@ button:hover {
   background-color: lightgray;
 }
 
+tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
 .margin-bottom-2rem {
   margin-bottom: 2rem;
+}
+
+#table-header {
+  background-color: rgb(128, 128, 128);
 }
 
 #addEntry {
