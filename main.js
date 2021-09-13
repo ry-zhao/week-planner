@@ -28,8 +28,29 @@ function handleUnload(event) {
   localStorage.setItem('entry-list', entriesJSON);
 }
 
+/*
+- access data by button clicked
+- create DOM tree
+-
+*/
+
 function changeScheduled(event) {
   $scheduled.textContent = 'Scheduled Events for ' + event.target.textContent;
+  renderTable(event.target.getAttribute('data-date'));
+}
+
+function renderTable(date) {
+  var daySchedule = data.date
+
+  var $tr1 = document.createElement('tr');
+
+  var $tdTime = document.createElement('td');
+  $tr.appendChild($tdTime);
+  $tdTime.textContent =
+
+  var $tdDescription = document.createElement('td');
+  $tr1.appendChild($tdDescription);
+  $tdDescription.textContent
 }
 
 $week.addEventListener('click', changeScheduled);
