@@ -1,6 +1,8 @@
 var $popUpAddEntry = document.querySelector('#popUpAddEntry');
 var $addEntry = document.querySelector('#addEntry');
 var $form = document.querySelector('form');
+var $scheduled = document.querySelector('h3');
+var $week = document.querySelector('#week');
 
 var data = {
   sun: [],
@@ -10,7 +12,7 @@ var data = {
   thurs: [],
   fri: [],
   sat: []
-}
+};
 
 $addEntry.addEventListener('click', showPopUp);
 $form.addEventListener('submit', addSubmission);
@@ -26,6 +28,12 @@ function handleUnload(event) {
   localStorage.setItem('entry-list', entriesJSON);
 }
 
+function changeScheduled(event) {
+  $scheduled.textContent = 'Scheduled Events for ' + event.target.textContent;
+}
+
+$week.addEventListener('click', changeScheduled);
+
 window.addEventListener('beforeunload', handleUnload);
 
 function addSubmission(event) {
@@ -33,11 +41,8 @@ function addSubmission(event) {
   var entry = {};
   entry.time = $form.elements.time.value;
   entry.description = $form.elements.description.value;
-  data.push(entry);
   $popUpAddEntry.className = 'hidden dimmer container';
-  var x = $form.elements.day.value;
-  console.log(x);
-  data[x].push(entry);
+  data[$form.elements.day.value].push(entry);
   $form.reset();
 }
 
