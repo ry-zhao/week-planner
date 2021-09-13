@@ -16,6 +16,19 @@ button:hover {
   cursor: pointer;
 }
 
+tr {
+  height: 1.8em;
+  padding: 0;
+}
+
+th {
+  padding: 0;
+}
+
+td {
+  padding: 0;
+}
+
 .row {
   display: flex;
 }
@@ -103,6 +116,12 @@ tr:nth-child(odd) {
 
 .margin-bottom-2rem {
   margin-bottom: 2rem;
+}
+
+.tableEvents {
+  width: 100%;
+  border: 1px solid black;
+  padding: 0;
 }
 
 #table-header {
