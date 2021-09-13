@@ -55,6 +55,26 @@ function renderTable(date) {
     $tr.appendChild($tdDescription);
     $tdDescription.textContent = daySchedule[i].description;
 
+    var $row = document.createElement('div');
+    $row.className = 'row justify-space';
+    $tdDescription.appendChild($row);
+
+    var $colText = document.createElement('div');
+    $colText.className = 'col-two-thirds';
+    $row.appendChild($colText);
+
+    var $colButtons = document.createElement('div');
+    $colButtons.className = 'col-one-third';
+    $row.appendChild($colButtons);
+
+    var $updateButton = document.createElement('button');
+    $updateButton.className = 'update-button';
+    $colButtons.appendChild($updateButton);
+
+    var $deleteButton = document.createElement('button');
+    $deleteButton.className = 'delete-button';
+    $colButtons.appendChild($deleteButton);
+
     $tbody.appendChild($tr);
   }
 }
