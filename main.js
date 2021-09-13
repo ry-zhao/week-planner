@@ -3,6 +3,7 @@ var $addEntry = document.querySelector('#addEntry');
 var $form = document.querySelector('form');
 var $scheduled = document.querySelector('h3');
 var $week = document.querySelector('#week');
+var $tbody = document.querySelector('tbody');
 
 var data = {
   sun: [],
@@ -40,17 +41,17 @@ function changeScheduled(event) {
 }
 
 function renderTable(date) {
-  var daySchedule = data.date
-
-  var $tr1 = document.createElement('tr');
-
-  var $tdTime = document.createElement('td');
-  $tr.appendChild($tdTime);
-  $tdTime.textContent =
-
-  var $tdDescription = document.createElement('td');
-  $tr1.appendChild($tdDescription);
-  $tdDescription.textContent
+  var daySchedule = data[date];
+  for (var i = 0; i < daySchedule.length; i++) {
+    var $tr1 = document.createElement('tr');
+    var $tdTime = document.createElement('td');
+    $tr1.appendChild($tdTime);
+    $tdTime.textContent = daySchedule[i].time;
+    var $tdDescription = document.createElement('td');
+    $tr1.appendChild($tdDescription);
+    $tdDescription.textContent = daySchedule[i].description;
+    $tbody.appendChild($tr1);
+  }
 }
 
 $week.addEventListener('click', changeScheduled);
