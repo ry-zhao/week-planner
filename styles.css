@@ -37,6 +37,14 @@ td {
   width: calc((1 / 7) * 100%);
 }
 
+.col-one-fourth {
+  width: 25%;
+}
+
+.col-three-fourths {
+  width: 75%;
+}
+
 .container {
   display: flex;
   justify-content: center;

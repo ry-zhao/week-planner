@@ -42,15 +42,20 @@ function changeScheduled(event) {
 
 function renderTable(date) {
   var daySchedule = data[date];
+  $tbody.innerHTML = '';
   for (var i = 0; i < daySchedule.length; i++) {
-    var $tr1 = document.createElement('tr');
+    var $tr = document.createElement('tr');
     var $tdTime = document.createElement('td');
-    $tr1.appendChild($tdTime);
+
+    $tr.appendChild($tdTime);
     $tdTime.textContent = daySchedule[i].time;
     var $tdDescription = document.createElement('td');
-    $tr1.appendChild($tdDescription);
+    $tdDescription.className = 'row';
+
+    $tr.appendChild($tdDescription);
     $tdDescription.textContent = daySchedule[i].description;
-    $tbody.appendChild($tr1);
+
+    $tbody.appendChild($tr);
   }
 }
 
