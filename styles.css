@@ -33,6 +33,14 @@ td {
   display: flex;
 }
 
+.flex-center {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
 .col-one-seventh {
   width: calc((1 / 7) * 100%);
 }
@@ -50,11 +58,21 @@ td {
 }
 
 .col-two-thirds {
-  width: 100% * (2/3);
+  width: calc(100% * 2 / 3);
 }
 
 .col-one-third {
-  width: 100% * (1/3);
+  width: calc(100% * 1 / 3);
+}
+
+.update-button {
+  width: 5rem;
+  height: 2rem;
+}
+
+.delete-button {
+  width: 5rem;
+  height: 2rem;
 }
 
 .container {

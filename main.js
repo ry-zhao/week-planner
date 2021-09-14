@@ -20,7 +20,6 @@ $form.addEventListener('submit', addSubmission);
 $week.addEventListener('click', changeScheduled);
 window.addEventListener('beforeunload', handleUnload);
 
-
 var previousEntriesJSON = localStorage.getItem('entry-list');
 
 if (previousEntriesJSON !== null) {
@@ -45,10 +44,7 @@ function changeScheduled(event) {
 
 function renderTable(date) {
   var daySchedule = data[date];
-  console.log(data);
-  console.log(date);
-  console.log(data[date]);
-  console.log(daySchedule);
+
   $tbody.innerHTML = '';
   for (var i = 0; i < daySchedule.length; i++) {
     var $tr = document.createElement('tr');
@@ -57,17 +53,15 @@ function renderTable(date) {
     $tr.appendChild($tdTime);
     $tdTime.textContent = daySchedule[i].time;
     var $tdDescription = document.createElement('td');
-    $tdDescription.className = 'row';
-
     $tr.appendChild($tdDescription);
-    $tdDescription.textContent = daySchedule[i].description;
 
     var $row = document.createElement('div');
-    $row.className = 'row justify-space';
+    $row.className = 'row justify-space justify-center';
     $tdDescription.appendChild($row);
 
     var $colText = document.createElement('div');
-    $colText.className = 'col-two-thirds';
+    $colText.className = 'col-two-thirds flex-center align-center';
+    $colText.textContent = daySchedule[i].description;
     $row.appendChild($colText);
 
     var $colButtons = document.createElement('div');
@@ -76,10 +70,12 @@ function renderTable(date) {
 
     var $updateButton = document.createElement('button');
     $updateButton.className = 'update-button';
+    $updateButton.textContent = 'Update';
     $colButtons.appendChild($updateButton);
 
     var $deleteButton = document.createElement('button');
     $deleteButton.className = 'delete-button';
+    $deleteButton.textContent = 'Delete';
     $colButtons.appendChild($deleteButton);
 
     $tbody.appendChild($tr);
