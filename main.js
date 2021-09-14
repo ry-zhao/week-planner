@@ -19,6 +19,13 @@ $addEntry.addEventListener('click', showPopUp);
 $form.addEventListener('submit', addSubmission);
 $week.addEventListener('click', changeScheduled);
 window.addEventListener('beforeunload', handleUnload);
+$tbody.addEventListener('click', showEdit);
+
+function showEdit(event) {
+  if (event.target.tagName === 'BUTTON') {
+    showPopUp();
+  }
+}
 
 var previousEntriesJSON = localStorage.getItem('entry-list');
 
@@ -94,4 +101,8 @@ function addSubmission(event) {
 
 function showPopUp(event) {
   $popUpAddEntry.className = 'dimmer container';
+}
+
+function hidePopUp(event) {
+  $popUpAddEntry.className = 'hidden dimmer container';
 }
