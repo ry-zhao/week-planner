@@ -17,6 +17,9 @@ var data = {
 
 $addEntry.addEventListener('click', showPopUp);
 $form.addEventListener('submit', addSubmission);
+$week.addEventListener('click', changeScheduled);
+window.addEventListener('beforeunload', handleUnload);
+
 
 var previousEntriesJSON = localStorage.getItem('entry-list');
 
@@ -42,6 +45,10 @@ function changeScheduled(event) {
 
 function renderTable(date) {
   var daySchedule = data[date];
+  console.log(data);
+  console.log(date);
+  console.log(data[date]);
+  console.log(daySchedule);
   $tbody.innerHTML = '';
   for (var i = 0; i < daySchedule.length; i++) {
     var $tr = document.createElement('tr');
@@ -78,10 +85,6 @@ function renderTable(date) {
     $tbody.appendChild($tr);
   }
 }
-
-$week.addEventListener('click', changeScheduled);
-
-window.addEventListener('beforeunload', handleUnload);
 
 function addSubmission(event) {
   event.preventDefault();
